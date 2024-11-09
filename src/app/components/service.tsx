@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion";
-import { BackgroundBeamsWithCollision } from "@/app/components/ui/background-beams-with-collision";
 
 
 function Services() {

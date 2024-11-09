@@ -17,7 +17,7 @@ function Projects() {
     }}>
   
 
-    <section className="max-w-screen-xl mx-auto mt-20 bg-[#f2f2f2] border-2 ">
+    <section className="max-w-screen-xl mx-auto  bg-[#f2f2f2] border-2 ">
 
   <div className="max-w-screen-xl mx-auto bg-[#f2f2f2] ">
     

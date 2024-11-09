@@ -1,6 +1,5 @@
 "use client"
 import { TypeAnimation } from 'react-type-animation';
-import { BackgroundBeamsWithCollision } from "@/app/components/ui/background-beams-with-collision";
 import { motion } from 'framer-motion';
 
 
@@ -14,15 +13,15 @@ function Hero() {
       transition={{ duration: 1 }}
     >
 
-
-      <section className='max-w-screen-2xl pt-10  lg:pt-20'>
-        <BackgroundBeamsWithCollision className='max-w-[1220px] mx-auto flex flex-col sm:flex-col lg:flex-row justify-between items-center h-auto font-serif  '>
+      <section className='max-w-screen-2xl pt-10 relative '>
+     
+          <div className='max-w-screen-xl mx-auto flex flex-col sm:flex-col lg:flex-row justify-between items-center h-auto font-mono '>
           
           {/* parent */}
 
           {/* child  */}
 
-          <div className='max-w-[600px] pt-20  text-center'>
+          <div className='max-w-[600px] lg:pt-20 pt-10 mb-20  text-center'>
             <h3 className='text-2xl  relative z-20 md:text-3xl lg:text-5xl font-bold text-blue-500  dark:text-blue-600 font-sans tracking-tight mb-8'>Hello {`I'm `}</h3>
 
             <TypeAnimation
@@ -84,9 +83,12 @@ function Hero() {
 
           </div>
 
-        </BackgroundBeamsWithCollision>
+       
+        </div>
+    
       </section>
-    </motion.div>
+
+  </motion.div>
 
   )
 }
