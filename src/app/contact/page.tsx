@@ -15,7 +15,7 @@ function Contact() {
       }}
     > 
     <div className="h-[13vh]"></div>
-      <main className="max-w-screen-2xl mx-auto bg-gradient-to-br from-blue-800 to-blue-400 via-yellow-300 p-2">
+      <main className="max-w-screen-2xl mx-auto bg-gradient-to-br from-blue-300 to-green-400 via-yellow-300 p-2">
 
       <div className="h-[10vh] text-4xl sm:text-6xl text-yellow-800 flex justify-center items-center font-bold pt-10"> Contact Us
       </div>
