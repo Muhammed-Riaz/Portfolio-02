@@ -1,72 +1,130 @@
-
+"use client"
+import { motion } from 'framer-motion';
+import { MapPin, Phone, Mail, Github, Linkedin, Twitter, Instagram } from 'lucide-react';
 
 function Footer() {
+  const contactInfo = [
+    {
+      icon: <MapPin className="w-6 h-6" />,
+      title: "Address",
+      content: ["Pakistan Sindh Hyderabad"],
+      link: "https://maps.google.com"
+    },
+    {
+      icon: <Phone className="w-6 h-6" />,
+      title: "Phone",
+      content: ["+92 340 2800715", "+92 313 3172244"],
+      link: "tel:+923402800715"
+    },
+    {
+      icon: <Mail className="w-6 h-6" />,
+      title: "Email",
+      content: ["riazahmedzaur110@gmail.com"],
+      link: "mailto:riazahmedzaur110@gmail.com"
+    }
+  ];
+
+  const socialLinks = [
+    { icon: <Github className="w-5 h-5" />, href: "https://github.com/Muhammed-Riaz", label: "GitHub" },
+    { icon: <Linkedin className="w-5 h-5" />, href: "https://www.linkedin.com/in/riaz-ahmed-zaur-a668832b6/", label: "LinkedIn" },
+    { icon: <Twitter className="w-5 h-5" />, href: "https://twitter.com", label: "Twitter" },
+    { icon: <Instagram className="w-5 h-5" />, href: "https://instagram.com", label: "Instagram" }
+  ];
+
   return (
+    <footer className="relative bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900">
+      {/* Decorative elements */}
+      <div className="absolute inset-0 bg-grid-slate-100 dark:bg-grid-slate-700/25 bg-[size:20px_20px] opacity-20"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-700 to-transparent"></div>
 
-
-    <footer className="w-full mt-24 bg-[#f2f2f2]">
-
-      {/* Parent */}
-      <div className="grid lg:grid-cols-3 grid-cols-1 max-w-screen-lg mx-auto lg:gap-20">
-
-        {/* Start Child 001 */}
-
-        <div className="max-w-screen-xl mx-auto py-10 flex lg:flex-row flex-col justify-center items-center text-center ">
-          <div className="lg:p-5">
-            <svg className=" lg:w-24 w-16 h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">
-              <path fillRule="evenodd" d="M5.37 2.257a1.25 1.25 0 0 1 1.214-.054l3.378 1.69 2.133-1.313A1.25 1.25 0 0 1 14 3.644v7.326c0 .434-.225.837-.595 1.065l-2.775 1.708a1.25 1.25 0 0 1-1.214.053l-3.378-1.689-2.133 1.313A1.25 1.25 0 0 1 2 12.354V5.029c0-.434.225-.837.595-1.064L5.37 2.257ZM6 4a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-1.5 0v-4.5A.75.75 0 0 1 6 4Zm4.75 2.75a.75.75 0 0 0-1.5 0v4.5a.75.75 0 0 0 1.5 0v-4.5Z" clipRule="evenodd"></path>
-            </svg>
-          </div>
-          <div>
-            <h4 className="text-2xl font-bold text-red-700">Address</h4>
-            <p className="text-[blueviolet] text-lg font-mono">City Hyderabad</p>
-          </div>
-        </div>
-        {/* End Child 001 */}
-
-        {/* Start Child 002 */}
-        <div className="max-w-screen-xl mx-auto p-5 flex lg:flex-row flex-col justify-center items-center text-center  ">
-          <div className="p-5">
-            <svg className="logos w-16 h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">
-              <path d="M7.25 11.5a.75.75 0 0 0 0 1.5h1.5a.75.75 0 0 0 0-1.5h-1.5Z"></path>
-              <path fillRule="evenodd" d="M6 1a2.5 2.5 0 0 0-2.5 2.5v9A2.5 2.5 0 0 0 6 15h4a2.5 2.5 0 0 0 2.5-2.5v-9A2.5 2.5 0 0 0 10 1H6Zm4 1.5h-.5V3a.5.5 0 0 1-.5.5H7a.5.5 0 0 1-.5-.5v-.5H6a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1Z" clipRule="evenodd"></path>
-            </svg>
-          </div>
-          <div>
-            <h4 className="text-2xl font-bold text-red-700 mb-2">Phone</h4>
-            <p className="text-[blueviolet] text-lg font-mono">03402800715</p>
-            <p className="text-[blueviolet] text-lg font-mono">03133172244</p>
-          </div>
-        </div>
-        {/* End Child 002 */}
-
-        {/* Start Child 003 */}
-        <div className="max-w-screen-xl mx-auto p-5 flex lg:flex-row flex-col justify-center items-center text-center ">
-          <div className="logo p-5">
-            <svg className="logos w-16 h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">
-              <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5v.793c.026.009.051.02.076.032L7.674 8.51c.206.1.446.1.652 0l6.598-3.185A.755.755 0 0 1 15 5.293V4.5A1.5 1.5 0 0 0 13.5 3h-11Z"></path>
-              <path d="M15 6.954 8.978 9.86a2.25 2.25 0 0 1-1.956 0L1 6.954V11.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V6.954Z"></path>
-            </svg>
-          </div>
-          <div className="text-[blueviolet]">
-            <h4 className="text-2xl font-bold text-red-700">Send me Email</h4>
-            <p className="text-lg font-mono">riazahmedzaur110@gmail.com</p>
-          </div>
-        </div>
-        {/* End Child 003 */}
-      </div>
-
-      <hr className="mt-24  mx-auto max-w-[90%] border-2 border-red-500" />
-
-      <div className="grid lg:grid-cols-2 grid-cols-1 max-w-[90%] mx-auto text-gray-600">
-        <div className="p-4">
-          <h2 className="text-xl font-bold">Riaz-2024-25 | All Rights Reserved</h2>
+      <div className="relative max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Main footer content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 py-16">
+          {contactInfo.map((item, index) => (
+            <motion.div
+              key={item.title}
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="flex flex-col items-center text-center"
+            >
+              <a
+                href={item.link}
+                className="group relative p-4 rounded-full bg-white/30 dark:bg-gray-800/30 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                {item.icon}
+              </a>
+              <h3 className="mt-4 text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
+                {item.title}
+              </h3>
+              {item.content.map((text, i) => (
+                <p key={i} className="mt-2 text-gray-600 dark:text-gray-300">
+                  {text}
+                </p>
+              ))}
+            </motion.div>
+          ))}
         </div>
 
-        <div className="flex justify-between items-center font-bold text-lg p-4">
-          <div>Term & Condition</div>
-          <div>Privacy Policy</div>
-          <div>Sitemap</div>
+        {/* Social links */}
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="flex justify-center space-x-6 py-8"
+        >
+          {socialLinks.map((social, index) => (
+            <motion.a
+              key={social.label}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-full bg-white/30 dark:bg-gray-800/30 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+            >
+              {social.icon}
+              <span className="sr-only">{social.label}</span>
+            </motion.a>
+          ))}
+        </motion.div>
+
+        <div className="border-t border-gray-200 dark:border-gray-700">
+          <div className="py-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="text-center md:text-left"
+              >
+                <p className="text-gray-600 dark:text-gray-300">
+                  © {new Date().getFullYear()} Riaz. All rights reserved.
+                </p>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+                className="flex flex-wrap justify-center md:justify-end gap-4 text-sm"
+              >
+                <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">
+                  Terms & Conditions
+                </a>
+                <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">
+                  Privacy Policy
+                </a>
+                <a href="#" className="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-300">
+                  Sitemap
+                </a>
+              </motion.div>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

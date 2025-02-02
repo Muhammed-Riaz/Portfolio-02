@@ -1,139 +1,156 @@
-"use client";
+"use client"
+import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { motion } from "framer-motion";
 
 function About() {
+  const fadeInUp = {
+    initial: { y: 30, opacity: 0 },
+    animate: { y: 0, opacity: 1 },
+    transition: { duration: 0.8 }
+  };
+
+  const skills = [
+    {
+      name: "HTML5",
+      image: "https://cdn0.iconfinder.com/data/icons/social-network-7/50/22-1024.png",
+      description: "HTML5 is the backbone of my web development skills"
+    },
+    {
+      name: "CSS3",
+      image: "https://www.shareicon.net/data/512x512/2015/09/11/99500_css3_512x512.png",
+      description: "I possess strong expertise in CSS3, enabling me to craft visually appealing and responsive designs."
+    },
+    {
+      name: "JavaScript",
+      image: "https://logodownload.org/wp-content/uploads/2022/04/javascript-logo-0.png",
+      description: "I have developed strong skills in JavaScript, a vital language for web development."
+    },
+    {
+      name: "TypeScript",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png",
+      description: "TypeScript enhances the development process by providing type safety and advanced tooling."
+    },
+    {
+      name: "React",
+      image: "https://cdn.freebiesupply.com/logos/large/2x/react-1-logo-png-transparent.png",
+      description: "React is my go-to library for building dynamic and responsive user interfaces."
+    },
+    {
+      name: "Next.js",
+      image: "https://images.ctfassets.net/23aumh6u8s0i/c04wENP3FnbevwdWzrePs/1e2739fa6d0aa5192cf89599e009da4e/nextjs",
+      description: "Next.js enables me to build performant, server-rendered applications with ease."
+    }
+  ];
+
   return (
-    <main>
-
-      <motion.div
-        initial={{ opacity: 0.0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{
-          delay: 0.3,
-          duration: 0.8,
-          ease: "easeInOut",
-        }}
-      >
-        <section className='max-w-screen-2xl bg-gradient-to-br from-blue-800 to-blue-400 via-yellow-300 text-gray-700 h-full pb-10 pt-20 '>
-
-          {/* heading */}
-          <div>
-            <h5 className='text-5xl text-center mb-10 pt-10 text-yellow-900 font-bold'>About me</h5>
-
-          </div>
-          {/* parent */}
-
-          <div className='flex lg:flex-row flex-col lg:justify-between justify-around items-center  max-w-screen-xl mx-auto lg:h-[80vh] px-5 border-2 rounded-lg  ml-5 mr-5 gap-20'>
-            {/* cild div */}
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      className="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900 overflow-hidden"
+    >
+      {/* Decorative circles */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob" />
+      <div className="absolute top-0 right-0 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000" />
+      <div className="absolute bottom-0 left-50 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000" />
 
 
-            {/* duplicate */}
+      <div className="relative max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 mt-14">
+        {/* About Section */}
+        <motion.section 
+          className="mb-20"
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.h2 
+            className="text-4xl sm:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600"
+            {...fadeInUp}
+          >
+            About Me
+          </motion.h2>
 
-            <div className='block sm:hidden pt-20 '>
-              <Image className='rounded-xl' src={"/img.jpg"} height={500} width={500} alt="Hero image"></Image>
-            </div>
-
-
-            <div className='max-w-[800px] text-2xl font-mono pt-10 mb-10 '>
-              <p>{`I've worked on various projects using these technologies, building user-friendly interfaces that are both efficient and aesthetically pleasing.`}
-                I am passionate about creating seamless user experiences and continuously learning new technologies to enhance my skills.
-                Feel free to reach out for collaborations or discussions!</p>
-            </div>
-
-
-            {/* child 2 */}
-            <div className='hidden sm:block '>
-              <Image src={"/img.jpg"} height={300} width={300} alt="Hero image"></Image>
-            </div>
-          </div>
-
-        </section>
-
-        <section className='max-w-screen-2xl bg-gradient-to-br from-blue-800 to-blue-400 via-yellow-300 pb-10'>
-
-          <h2 className='text-center text-5xl lg:text-6xl font-bold mb-10 mt-10 text-yellow-900 pt-10'>Skills</h2>
-
-          <div className='max-w-screen-lg mx-auto'>
-            <div className=' ml-5 mr-5 grid lg:grid-cols-3 grid-col-1  text-center  justify-center gap-16 items-center lg:pl-20 border-2 pb-10  pt-10 text-gray-800'>
-            {/* html */}
-            <div className='w-[220px]'>
-              <div>
-                <div className='flex justify-center items-center'>
-                  <Image src={"https://cdn0.iconfinder.com/data/icons/social-network-7/50/22-1024.png"} height={150} width={150} alt="Hero image"></Image>
-                </div>
-                <h3 className='text-2xl font-bold mb-3 mt-10'>Html 5</h3>
-              </div>
-              <p className="text-lg  mt-2">
-                HTML5 is the backbone of my web development skills
+          <div className="flex flex-col lg:flex-row items-center gap-12 bg-white/30 dark:bg-gray-800/30 backdrop-blur-lg rounded-2xl p-8 shadow-xl">
+            <motion.div 
+              className="lg:w-1/2"
+              initial={{ x: -50, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+            >
+              <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed">
+                I am a passionate web developer with a keen eye for creating seamless user experiences. 
+                With expertise in modern web technologies, I specialize in building responsive and 
+                performant applications that bring ideas to life. I believe in writing clean, 
+                maintainable code and staying up-to-date with the latest industry trends and best practices.
               </p>
+            </motion.div>
+           
+            <motion.div 
+            className="max-w-2/5"
+            initial={{ x: 50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="relative group">
+              <div className="absolute -inset-2 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition duration-700" />
+              <motion.img
+                className="relative w-96 h-96 mx-auto object-cover rounded-full ring-4  dark:ring-gray-800 shadow-2xl"
+                src="/pic.png"
+                alt="Description"
+                whileHover={{ 
+                  scale: 1.05,
+                  transition: { duration: 0.3 }
+                }}
+              />
             </div>
 
-            {/* css */}
-            <div className='w-[220px]'>
-              <div>
-                <div className='flex justify-center items-center'>
-                  <Image src={"https://www.shareicon.net/data/512x512/2015/09/11/99500_css3_512x512.png"} height={150} width={150} alt="Hero image"></Image>
-                </div>
-                <h3 className='text-2xl font-bold mb-2 mt-2'>CSS3</h3>
-              </div>
-              <p>  I possess strong expertise in CSS3, enabling me to craft visually appealing and responsive designs.</p>
-            </div>
-
-
-            {/* js  */}
-            <div className='w-[220px]'>
-              <div>
-                <div className='flex justify-center items-center'>
-                  <Image src={"https://logodownload.org/wp-content/uploads/2022/04/javascript-logo-0.png"} height={400} width={400} alt="Hero image"></Image>
-                </div>
-                <h3 className='text-2xl font-bold mt-8 mb-3'>Javascript</h3>
-              </div>
-              <p> I have developed strong skills in JavaScript, a vital language for web development..</p>
-            </div>
-
-
-            {/* ts */}
-            <div className='w-[220px]'>
-              <div>
-                <div className='flex justify-center items-center'>
-                  <Image src={"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png"} height={150} width={150} alt="Hero image"></Image>
-                </div>
-                <h3 className='text-2xl font-bold mb-5 mt-5'>Typescript</h3>
-              </div>
-              <p>  Typescript is a powerful, statically typed superset of JavaScript that enhances the development process by providing type safety and advanced tooling..</p>
-            </div>
-
-            {/* react */}
-            <div className='w-[220px]'>
-              <div>
-                <div className='flex justify-center items-center mb-5'>
-                  <Image src={"https://cdn.freebiesupply.com/logos/large/2x/react-1-logo-png-transparent.png"} height={150} width={150} alt="Hero image"></Image>
-                </div>
-                <h3 className='text-2xl font-bold mb-4'>React</h3>
-              </div>
-              <p> React is a popular JavaScript library used for building user interfaces, particularly for single-page applications (SPAs)..</p>
-            </div>
-
-            {/* Nextjs */}
-            <div className='w-[220px]'>
-              <div>
-                <div className='flex justify-center items-center'>
-                  <Image src={"https://images.ctfassets.net/23aumh6u8s0i/c04wENP3FnbevwdWzrePs/1e2739fa6d0aa5192cf89599e009da4e/nextjs"} height={150} width={150} alt="Hero image"></Image>
-                </div>
-                <h3 className='text-2xl font-bold mb-5 mt-5'>Next js</h3>
-              </div>
-              <p> Next.js is a powerful React framework that enables developers to build server-rendered applications with ease..</p>
-            </div>
-            </div>
-
+          </motion.div>
           </div>
+        </motion.section>
 
-        </section>
+        {/* Skills Section */}
+        <motion.section
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <motion.h2 
+            className="text-4xl sm:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600"
+            {...fadeInUp}
+          >
+            Skills & Technologies
+          </motion.h2>
 
-      </motion.div>
-    </main>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {skills.map((skill, index) => (
+              <motion.div
+                key={skill.name}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white/30 dark:bg-gray-800/30 backdrop-blur-lg rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
+              >
+                <div className="flex flex-col items-center">
+                  <div className="w-24 h-24 mb-4 relative">
+                    <Image
+                      src={skill.image}
+                      alt={skill.name}
+                      layout="fill"
+                      objectFit="contain"
+                      className="group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3">{skill.name}</h3>
+                  <p className="text-gray-600 dark:text-gray-300 text-center">{skill.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </motion.section>
+      </div>
 
+
+    </motion.div>
   );
 }
 
