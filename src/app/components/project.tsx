@@ -65,7 +65,7 @@ function Projects() {
             {
               title: "Resume Builder",
               image: "/resume.png",
-              href: "hackathone-a2wn.vercel.app"
+              href: "https://hackathone-a2wn.vercel.app"
             }
           ].map((project, index) => (
             <motion.div

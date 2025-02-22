@@ -76,6 +76,16 @@ function Hero() {
               <p className="leading-relaxed mt-16">
                 {`I'm a web developer with extensive experience in creating websites with modern UI/UX Design. With a strong foundation in front-end and back-end technologies, I specialize in building responsive web applications that bring ideas to life. My goal is to deliver high-quality, scalable solutions that exceed client expectations. Let's collaborate to turn your vision into reality!`}
               </p>
+
+              <div className='pt-6'>
+              <a
+                href="/Riaz_Resume.pdf
+"
+                download="Riaz_Ahmed_CV.pdf"
+                className='px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition duration-300'>
+                Download CV
+              </a>
+            </div>
             </motion.div>
           </motion.div>
 
